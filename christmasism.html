@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For my Christmas Partner</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #1f140a;
+      color: #f5efe6;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1512389098783-66b81f86e199') center/cover no-repeat;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .scroll-hint {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      animation: float 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  filter: blur(2px) brightness(0.7);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+    /* IMAGE SECTIONS */
+    .story {
+      background: #2b1d0e;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .story-item {
+      max-width: 700px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 1s ease;
+    }
+
+    .story-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story-item img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .story-item p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* MUSIC SECTION */
+    .music {
+      background: radial-gradient(circle, #3a2615, #1f140a);
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .music h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+
+    .play-btn {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: none;
+      background: #c0392b;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(192,57,43,0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(192,57,43,0.6); }
+      50% { box-shadow: 0 0 35px rgba(192,57,43,0.9); }
+      100% { box-shadow: 0 0 20px rgba(192,57,43,0.6); }
+    }
+
+    /* FINAL LETTER */
+    .letter {
+      background: #1a1209;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      line-height: 1.6;
+      padding: 100px 15%;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .letter { font-size: 1.6rem; padding: 80px 10%; }
+    }
+
+    .bg-video {
+  animation: fadeIn 2.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.end-video {
+  filter: blur(2px) brightness(0.75);
+}
+
+.warm {
+  background: rgba(40, 20, 10, 0.5);
+}
+
+.letter-content {
+  position: relative;
+  z-index: 2;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media(max-width: 768px) {
+  .letter-content {
+    font-size: 1.6rem;
+    padding: 0 10%;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="bg-video.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>This Christmas,<br>I made something for you 🎄</h1>
+    <div class="scroll-hint">Scroll ↓</div>
+  </div>
+</section>
+
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="story-item">
+      <img src="1.jpeg" alt="">
+      <p>Winter hits different with you.</p>
+    </div>
+    <div class="story-item">
+      <img src="2.jpeg" alt="">
+      <p>Every moment becomes the best.</p>
+    </div>
+    <div class="story-item">
+      <img src="3.jpeg" alt="">
+      <p>You are my favorite place. Person. Muse. Everything</p>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section class="music">
+    <h2>To your favorite Holiday song in this holiday season 🎶</h2>
+    <button class="play-btn" id="playBtn">▶</button>
+    <p>Press play, and keep scrolling.</p>
+
+    <audio id="song" src="nothing.mp3"></audio>
+  </section>
+
+  <!-- LETTER -->
+<section class="letter video-section">
+  <video autoplay muted loop playsinline class="bg-video end-video">
+    <source src="bg-video2.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay warm"></div>
+
+  <div class="letter-content">
+    <p>
+      You were the best part of this year.<br>
+      And you’ll be the best part of every Christmas after this.<br><br>
+      I love you ❤️
+    </p>
+  </div>
+</section>
+
+  <script>
+    // Scroll reveal
+    const items = document.querySelectorAll('.story-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    items.forEach(item => observer.observe(item));
+
+    // Music control
+    const playBtn = document.getElementById('playBtn');
+    const song = document.getElementById('song');
+    let playing = false;
+
+    playBtn.addEventListener('click', () => {
+      if (!playing) {
+        song.play();
+        playBtn.textContent = '❚❚';
+        playing = true;
+      } else {
+        song.pause();
+        playBtn.textContent = '▶';
+        playing = false;
+      }
+    });
+
+    song.volume = 0;
+song.play();
+
+let vol = 0;
+const fade = setInterval(() => {
+  if (vol < 0.7) {
+    vol += 0.02;
+    song.volume = vol;
+  } else {
+    clearInterval(fade);
+  }
+}, 200);
+
+  </script>
+
+</body>
+</html>
